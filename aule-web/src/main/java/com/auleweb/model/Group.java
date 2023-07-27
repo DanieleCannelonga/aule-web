@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "my_Groups")
+@Table(name = "my_groups")
 @Getter
 @Setter
 @NoArgsConstructor
