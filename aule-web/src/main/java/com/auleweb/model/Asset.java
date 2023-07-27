@@ -1,6 +1,9 @@
 package com.auleweb.model;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -26,6 +29,7 @@ public class Asset {
     private String name;
 
     @OneToMany(mappedBy = "asset")
+    @JsonIgnore
     private List<AssetRoom> assetRooms;
     
 }
