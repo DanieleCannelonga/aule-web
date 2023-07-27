@@ -1,6 +1,7 @@
 package com.auleweb.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ public interface GroupService {
 
 	Group saveOrUpdate(Group group);
 
-	Group getGroupById(Long idGroup);
+	Optional<Group> getGroupById(Long idGroup);
 
 	void deleteGroup(Long idGroup);
 

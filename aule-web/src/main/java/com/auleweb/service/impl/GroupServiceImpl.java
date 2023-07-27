@@ -1,6 +1,7 @@
 package com.auleweb.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,20 +25,17 @@ public class GroupServiceImpl implements GroupService {
 	}
 
 	@Override
+	public Optional<Group> getGroupById(Long id) {
+        return groupRepository.findById(id);
+	}
+
+	@Override
 	public Group saveOrUpdate(Group group) {
-		// TODO Auto-generated method stub
-		return null;
+        return groupRepository.save(group);
 	}
 
 	@Override
-	public Group getGroupById(Long idGroup) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void deleteGroup(Long idGroup) {
-		// TODO Auto-generated method stub
-		
+	public void deleteGroup(Long id) {
+        groupRepository.deleteById(id);
 	}
 }
