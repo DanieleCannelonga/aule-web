@@ -47,11 +47,11 @@ public class Room {
 
     @NotNull
     @Column(name = "electrical_outlets")
-    private int electricalOutlets;
+    private int electrical_outlets;
 
     @NotNull
     @Column(name = "ethernet_ports")
-    private int ethernetPorts;
+    private int ethernet_ports;
 
     @NotNull
     @Column(name = "link")
