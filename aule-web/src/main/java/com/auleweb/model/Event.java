@@ -4,6 +4,8 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -46,19 +48,23 @@ public class Event {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "typology_id")
+    @JsonIgnore
     private Typology typology;
 
     @NotNull
     @ManyToOne
     @JoinColumn(name = "supervisor_id")
+    @JsonIgnore
     private Supervisor supervisor;
 
     @NotNull
     @ManyToOne
     @JoinColumn(name = "room_id")
+    @JsonIgnore
     private Room room;
 
     @OneToMany(mappedBy = "event")
+    @JsonIgnore
     private List<CourseEvent> courseEvents;
     
 }
